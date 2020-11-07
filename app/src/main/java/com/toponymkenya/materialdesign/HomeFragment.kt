@@ -22,7 +22,8 @@ class HomeFragment : Fragment() {
 
     private fun setUpRecyclerView(rt : View) {
         val mainRecycl : RecyclerView = rt.findViewById(R.id.mainRecyclerView)
-        val adp = MainRecyclerViewAdapter(populateData())
+        seedData.addAll(getMaterialCategories())
+        val adp = MainRecyclerViewAdapter(seedData)
         val lytmng = LinearLayoutManager(activity)
         mainRecycl.apply {
             adapter = adp
@@ -31,17 +32,4 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun populateData() : ArrayList<MaterialItem>{
-        val typography = MaterialItem("Typography", R.drawable.typography)
-        val buttons = MaterialItem("Buttons", R.drawable.buttons)
-        val palette = MaterialItem("Color Palette", R.drawable.color_palette)
-        val animations = MaterialItem("Animations", R.drawable.animations)
-        val input = MaterialItem("Input", R.drawable.input)
-        val bottomnav = MaterialItem("Bottom Navigation", R.drawable.bottom_nav)
-        val grids = MaterialItem("Grids", R.drawable.grids)
-        val motion = MaterialItem("Motion", R.drawable.motions)
-        val dialogs = MaterialItem("Dialogs", R.drawable.dialogs)
-        seedData.addAll(listOf(typography, buttons, palette, animations, input, bottomnav, grids, motion, dialogs))
-        return seedData
-    }
 }

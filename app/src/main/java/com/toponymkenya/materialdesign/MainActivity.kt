@@ -6,6 +6,7 @@ import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,11 +14,17 @@ import com.toponymkenya.materialdesign.adapters.MainRecyclerViewAdapter
 import com.toponymkenya.materialdesign.adapters.MaterialItem
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var navController : NavController
+    private lateinit var appBarConfiguration : AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val navController : NavController  = findNavController(R.id.nav_host_fragment)
-        val appBarConfiguration : AppBarConfiguration = AppBarConfiguration(navController.graph)
+        navController = findNavController(R.id.nav_host_fragment)
+        appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
