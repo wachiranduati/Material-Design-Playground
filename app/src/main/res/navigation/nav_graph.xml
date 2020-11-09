@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_homeFragment_to_typographyFragment"
             app:destination="@id/typographyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_materialButtonsFragment"
+            app:destination="@id/materialButtonsFragment" />
     </fragment>
     <fragment
         android:id="@+id/typographyFragment"
         android:name="com.toponymkenya.materialdesign.Typography.TypographyFragment"
-        android:label="fragment_typography"
+        android:label="Material Design Typography"
         tools:layout="@layout/fragment_typography" />
+    <fragment
+        android:id="@+id/materialButtonsFragment"
+        android:name="com.toponymkenya.materialdesign.MaterialButtons.MaterialButtonsFragment"
+        android:label="Material Buttons"
+        tools:layout="@layout/fragment_material_buttons" />
 </navigation>

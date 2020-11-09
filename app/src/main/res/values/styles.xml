@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-<style name="TextAppearance.MaterialComponents.Body1.spaced" parent="TextAppearance.MaterialComponents.Body1">
-    <item name="android:letterSpacing">0.5</item>
-</style>
+
+    <style name="TextAppearance.MaterialComponents.Body1.spaced" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:letterSpacing">0.5</item>
+    </style>
 
     <style name="TextAppearance.MaterialComponents.Body1.fonted" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily"></item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="TextAppearance.MaterialComponents.Button.buttonIcon" parent="TextAppearance.MaterialComponents.Button">
+        <item name="backgroundTint">#ffffff</item>
+        <item name="android:textColor">#E91E63</item>
+        <item name="iconTint">#E91E63</item>
+        <item name="rippleColor">#95E91E63</item>
+    </style>
+
+    <style name="TextAppearance.MaterialComponents.Button.NoIcon" parent="TextAppearance.MaterialComponents.Button">
+        <item name="backgroundTint">#E91E63</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>
