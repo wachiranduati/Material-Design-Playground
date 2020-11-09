@@ -22,4 +22,11 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="Widget.MaterialComponents.Button.OutlinedButton.button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">#E91E63</item>
+        <item name="rippleColor">#FFEB3B</item>
+        <item name="android:textColor">#818181</item>
+        <item name="backgroundTint">@color/bg_toggle_state</item>
+    </style>
+
 </resources>
