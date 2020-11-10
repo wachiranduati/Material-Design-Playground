@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_materialButtonsFragment"
             app:destination="@id/materialButtonsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_paletteFragment"
+            app:destination="@id/paletteFragment" />
     </fragment>
     <fragment
         android:id="@+id/typographyFragment"
@@ -27,4 +30,9 @@
         android:name="com.toponymkenya.materialdesign.MaterialButtons.MaterialButtonsFragment"
         android:label="Material Buttons"
         tools:layout="@layout/fragment_material_buttons" />
+    <fragment
+        android:id="@+id/paletteFragment"
+        android:name="com.toponymkenya.materialdesign.Palette.PaletteFragment"
+        android:label="Material Palette"
+        tools:layout="@layout/fragment_palette" />
 </navigation>
