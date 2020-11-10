@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_paletteFragment"
             app:destination="@id/paletteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_animationsFragment"
+            app:destination="@id/animationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/typographyFragment"
@@ -35,4 +38,42 @@
         android:name="com.toponymkenya.materialdesign.Palette.PaletteFragment"
         android:label="Material Palette"
         tools:layout="@layout/fragment_palette" />
+    <fragment
+        android:id="@+id/animationsFragment"
+        android:name="com.toponymkenya.materialdesign.Animations.AnimationsFragment"
+        android:label="Animations"
+        tools:layout="@layout/fragment_animations" >
+        <action
+            android:id="@+id/action_animationsFragment_to_valueAnimatorFragment"
+            app:destination="@id/valueAnimatorFragment" />
+        <action
+            android:id="@+id/action_animationsFragment_to_objectAnimatorFragment"
+            app:destination="@id/objectAnimatorFragment" />
+        <action
+            android:id="@+id/action_animationsFragment_to_animatorSetFragment"
+            app:destination="@id/animatorSetFragment" />
+        <action
+            android:id="@+id/action_animationsFragment_to_layoutTransitionFragment"
+            app:destination="@id/layoutTransitionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/valueAnimatorFragment"
+        android:name="com.toponymkenya.materialdesign.Animations.ValueAnimatorFragment"
+        android:label="Value Animator"
+        tools:layout="@layout/fragment_value_animator" />
+    <fragment
+        android:id="@+id/objectAnimatorFragment"
+        android:name="com.toponymkenya.materialdesign.Animations.ObjectAnimatorFragment"
+        android:label="Object Animator"
+        tools:layout="@layout/fragment_object_animator" />
+    <fragment
+        android:id="@+id/animatorSetFragment"
+        android:name="com.toponymkenya.materialdesign.Animations.AnimatorSetFragment"
+        android:label="Animator Set"
+        tools:layout="@layout/fragment_animator_set" />
+    <fragment
+        android:id="@+id/layoutTransitionFragment"
+        android:name="com.toponymkenya.materialdesign.Animations.LayoutTransitionFragment"
+        android:label="Layout Transition"
+        tools:layout="@layout/fragment_layout_transition" />
 </navigation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".Animations.AnimationsFragment">
+
+    <Button
+        android:id="@+id/valueAnimatorButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="VALUE ANIMATOR" />
+
+    <Button
+        android:id="@+id/objectAnimatorButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="OBJECT ANIMATOR" />
+
+    <Button
+        android:id="@+id/animatorSetButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ANIMATOR SET" />
+
+    <Button
+        android:id="@+id/layoutTransitionButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="LAYOUT TRANSITION" />
+
+</LinearLayout>
