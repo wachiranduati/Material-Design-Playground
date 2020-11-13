@@ -8,7 +8,7 @@ internal fun getMaterialCategories() : ArrayList<MaterialItem>{
     val buttons = MaterialItem("Buttons", R.drawable.buttons, R.id.action_homeFragment_to_materialButtonsFragment)
     val palette = MaterialItem("Color Palette", R.drawable.color_palette, R.id.action_homeFragment_to_paletteFragment)
     val animations = MaterialItem("Animations", R.drawable.animations, R.id.action_homeFragment_to_animationsFragment)
-    val input = MaterialItem("Input", R.drawable.input, R.id.action_homeFragment_to_typographyFragment)
+    val input = MaterialItem("Input", R.drawable.input, R.id.action_homeFragment_to_inputFragment)
     val bottomnav = MaterialItem("Bottom Navigation", R.drawable.bottom_nav, R.id.action_homeFragment_to_typographyFragment)
     val grids = MaterialItem("Grids", R.drawable.grids, R.id.action_homeFragment_to_typographyFragment)
     val motion = MaterialItem("Motion", R.drawable.motions, R.id.action_homeFragment_to_typographyFragment)

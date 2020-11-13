@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_animationsFragment"
             app:destination="@id/animationsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_inputFragment"
+            app:destination="@id/inputFragment" />
     </fragment>
     <fragment
         android:id="@+id/typographyFragment"
@@ -76,4 +79,9 @@
         android:name="com.toponymkenya.materialdesign.Animations.LayoutTransitionFragment"
         android:label="Layout Transition"
         tools:layout="@layout/fragment_layout_transition" />
+    <fragment
+        android:id="@+id/inputFragment"
+        android:name="com.toponymkenya.materialdesign.input.InputFragment"
+        android:label="Material Design Input "
+        tools:layout="@layout/fragment_input" />
 </navigation>
