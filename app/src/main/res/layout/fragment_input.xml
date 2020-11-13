@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".input.InputFragment">
 
     <LinearLayout
@@ -18,9 +19,119 @@
             android:layout_gravity="center"
             android:drawableStart="@drawable/rona"
             android:drawablePadding="8dp"
+            android:layout_margin="16dp"
             android:hint="Enter Something"
             android:background="@drawable/bg_edit_text"
             android:inputType="text|textMultiLine|textLongMessage"
             android:padding="8dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Enter Something"
+            app:boxStrokeColor="#E85E8D"
+            app:boxStrokeErrorColor="#FFEB3B"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/error"
+            app:hintTextColor="#E85E8D"
+            app:startIconContentDescription="Lock icon"
+            app:startIconDrawable="@drawable/rona">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Enter Something"
+            app:boxStrokeColor="#E85E8D"
+            app:endIconMode="clear_text"
+            app:hintTextColor="#E85E8D">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dropdown_input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Enter Something"
+            app:boxStrokeColor="#E85E8D"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="#494949"
+            app:hintTextColor="#E85E8D">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Enter Something"
+            android:textColorHint="@color/white"
+            app:boxBackgroundColor="@color/black"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:counterTextColor="@android:color/darker_gray"
+            app:helperText="This is a helper"
+            app:helperTextEnabled="true"
+            app:hintTextColor="#494949"
+            app:prefixText="Pre"
+            app:prefixTextColor="#494949"
+            app:suffixText="Post"
+            app:suffixTextColor="#777777">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Enter Something"
+            android:textColorHint="@android:color/darker_gray"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeColor="#E85E8D"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:counterTextColor="@android:color/darker_gray"
+            app:helperText="This is a helper"
+            app:helperTextEnabled="true"
+            app:hintTextColor="#E85E8D"
+            app:prefixText="Pre"
+            app:prefixTextColor="@android:color/darker_gray"
+            app:suffixText="Post"
+            app:suffixTextColor="@android:color/darker_gray">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
     </LinearLayout>
 </ScrollView>
