@@ -1,34 +1,20 @@
 package com.toponymkenya.materialdesign.Animations
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnticipateOvershootInterpolator
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import com.toponymkenya.materialdesign.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AnimatorSetFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AnimatorSetFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +24,64 @@ class AnimatorSetFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_animator_set, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AnimatorSetFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AnimatorSetFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val animstTxt = view.findViewById<TextView>(R.id.animSetTextView)
+        val animstImgVw = view.findViewById<ImageView>(R.id.animSetImageView)
+        val animBtn = view.findViewById<Button>(R.id.animateMeBtn)
+
+        val animTextCoordinates = IntArray(2)
+        val imageTwoCoordinates = IntArray(2)
+
+        animstTxt.getLocationOnScreen(animTextCoordinates)
+        animstImgVw.getLocationOnScreen(imageTwoCoordinates)
+
+        val animTextXPosition = animTextCoordinates[0].toFloat()
+        val imageInitialXPosition = imageTwoCoordinates[0].toFloat()
+        val animTextYPosition = animTextCoordinates[1].toFloat()
+        val imageInitialYPosition = imageTwoCoordinates[1].toFloat()
+
+        val animTextTranslationY = PropertyValuesHolder.ofFloat(
+            View.TRANSLATION_Y,
+            -animTextYPosition,
+            imageInitialYPosition
+        )
+
+        val imageTranslationY = PropertyValuesHolder.ofFloat(
+            View.TRANSLATION_Y,
+            imageInitialYPosition,
+            -animTextYPosition
+        )
+
+        val animTextTranslationX = PropertyValuesHolder.ofFloat(
+            View.TRANSLATION_X,
+            animTextXPosition,
+            -imageInitialYPosition
+        )
+
+        val imageTranslationX = PropertyValuesHolder.ofFloat(
+            View.TRANSLATION_X,
+            imageInitialXPosition,
+            imageInitialYPosition
+        )
+
+
+        val scaleY1 = ObjectAnimator.ofPropertyValuesHolder(animstTxt, animTextTranslationY, animTextTranslationX).apply {
+            duration = 4000
+            interpolator = AnticipateOvershootInterpolator()
+        }
+
+        val scaleY = ObjectAnimator.ofPropertyValuesHolder(animstImgVw, imageTranslationY, imageTranslationX).apply {
+            duration = 4000
+            interpolator = AnticipateOvershootInterpolator()
+        }
+
+        val playSet = AnimatorSet().apply {
+            play(scaleY1).with(scaleY)
+        }
+        animBtn.setOnClickListener {
+            playSet.start()
+        }
     }
 }
