@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_inputFragment"
             app:destination="@id/inputFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bottomNavFragment"
+            app:destination="@id/bottomNavFragment" />
     </fragment>
     <fragment
         android:id="@+id/typographyFragment"
@@ -84,4 +87,9 @@
         android:name="com.toponymkenya.materialdesign.input.InputFragment"
         android:label="Material Design Input "
         tools:layout="@layout/fragment_input" />
+    <fragment
+        android:id="@+id/bottomNavFragment"
+        android:name="com.toponymkenya.materialdesign.BottomNav.BottomNavFragment"
+        android:label="Materials Bottom Navigation"
+        tools:layout="@layout/fragment_bottom_nav" />
 </navigation>
